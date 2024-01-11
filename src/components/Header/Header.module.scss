@@ -1,0 +1,68 @@
+@import 'shared';
+
+.Header {
+  @include z-index(nav);
+  @include layout-side-padding;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: $navbar-height-mobile;
+  box-shadow: $element-shadow;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+
+  .hamburgerButton {
+    display: none;
+  }
+
+  @include breakpoint-max(tablet) {
+    .hamburgerButton {
+      display: flex;
+    }
+
+    .nav {
+      @include position-0;
+      @include box(100%);
+      @include layout-side-padding;
+      padding-top: spacing(20);
+      padding-bottom: spacing(8);
+      position: fixed;
+      transform: translateX(100%);
+      transition: transform $transition-short;
+      background-color: $black;
+      color: $white;
+
+      .menu {
+        @include box(100%);
+        @include flex-center-horiz;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .menuItem {
+          padding: px(5) px(10);
+        }
+      }
+    }
+
+    &.navOpen {
+      .nav {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @include breakpoint(tablet) {
+    .menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: spacing(2);
+    }
+  }
+
+  /* Desktop */
+  @include breakpoint(desktopSm) {
+    height: $navbar-height-desktop;
+  }
+}

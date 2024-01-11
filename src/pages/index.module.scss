@@ -1,0 +1,49 @@
+@import 'shared';
+
+.Home {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-bottom: spacing(3);
+  }
+
+  h1 {
+    @include font-style(h1);
+  }
+
+  h2 {
+    @include font-style(h2);
+  }
+
+  h3 {
+    @include font-style(h3);
+  }
+
+  h4 {
+    @include font-style(h4);
+  }
+
+  h5 {
+    @include font-style(h5);
+  }
+
+  h6 {
+    @include font-style(h6);
+  }
+
+  .paragraphL {
+    @include font-style(paragraph-l);
+  }
+
+  p {
+    @include font-style(paragraph);
+  }
+
+  .paragraphS {
+    @include font-style(paragraph-s);
+  }
+}

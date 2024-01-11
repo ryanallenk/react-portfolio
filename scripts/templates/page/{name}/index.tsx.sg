@@ -1,0 +1,15 @@
+import { memo } from 'react';
+import classnames from 'classnames';
+
+import styles from './index.module.scss';
+
+function {{name}}() {
+  return (
+    <main className={classnames(styles.{{name}})}>
+      <Head title="{{name}}" />
+      <h1>{{name}} Page</h1>
+    </main>
+  );
+}
+
+export default memo({{name}});

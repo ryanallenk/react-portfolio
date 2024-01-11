@@ -1,0 +1,20 @@
+import { memo } from 'react';
+import { storyblokEditable } from '@storyblok/react';
+import classnames from 'classnames';
+
+import styles from './{{name}}.module.scss';
+
+type Props = {
+  className?: string;
+  blok: any;
+};
+
+function {{name}}({ className, blok }: Props) {
+  return (
+    <div className={classnames(styles.{{name}}, className)} {...storyblokEditable(blok)}>
+      {{name}} component
+    </div>
+  );
+}
+
+export default memo({{name}});
